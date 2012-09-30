@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/Content/jquery.mobile-1.2.0-beta.1.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/jquery.mobile.structure-1.2.0-beta.1.css" rel="stylesheet" type="text/css" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jquerymobile")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div data-role="page">           
+            <div data-role="header">
+                <h1>Money Collector</h1>
+                @Html.ActionLink("New Reciept", "Index", "Home")
+                @Html.ActionLink("History", "Index", "History")
+            </div>
+
+            <div data-role="content">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+            </div>
+        </div data-role="page">
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

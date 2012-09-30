@@ -1,0 +1,116 @@
+﻿@model MoneyCollecter.Models.Reciept
+
+@{
+    ViewBag.Title = "New Reciept";
+}
+
+<h2>New Reciept</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Reciept</legend>
+
+        <div class="field-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Date)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Date)
+                @Html.ValidationMessageFor(model => model.Date)
+            </div>
+        </div>
+
+         <div class="field-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.WorldWideWork)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.WorldWideWork)
+                @Html.ValidationMessageFor(model => model.WorldWideWork)
+            </div>
+        </div>
+
+        <div class="field-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.KingdomHallFund)
+            </div>        
+            <div class="editor-field">
+                @Html.EditorFor(model => model.KingdomHallFund)
+                @Html.ValidationMessageFor(model => model.KingdomHallFund)
+            </div>
+        </div>
+        
+        <div class="field-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Congregation)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Congregation)
+                @Html.ValidationMessageFor(model => model.Congregation)
+            </div>
+        </div>
+
+        <div class="field-container">
+            <div class="editor-label">
+                @Html.EditorFor(model => model.Misc1Name)
+                @Html.ValidationMessageFor(model => model.Misc1Name)
+            
+            </div>
+            <div class="editor-field">
+                    @Html.EditorFor(model => model.Misc1)
+                    @Html.ValidationMessageFor(model => model.Misc1)
+            </div>
+        </div>
+
+        <div class="field-container">
+            <div class="editor-label">
+                @Html.EditorFor(model => model.Misc2Name)
+                @Html.ValidationMessageFor(model => model.Misc2Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Misc2)
+                @Html.ValidationMessageFor(model => model.Misc2)
+            </div>
+        </div>
+
+        <div class="field-container">
+            <div class="editor-label">
+                Total:
+            </div>
+            <div class="editor-field">
+                <div id="Total"></div>
+            </div>
+        </div>
+
+        <div class="field-container">
+            <input type="submit" value="Create" />
+        </div>
+    
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" language="javascript">
+        function calcTotal() {
+            var total = 0;
+            total += Number($("input#WorldWideWork").val());
+            total += Number($("input#KingdomHallFund").val());
+            total += Number($("input#Congregation").val());
+            total += Number($("input#Misc1").val());
+            total += Number($("input#Misc2").val());
+
+            $("div#Total").text("$" + Number(total).toFixed(2));
+        }
+
+        $(function () {
+            $("input#WorldWideWork").change(calcTotal);
+            $("input#KingdomHallFund").change(calcTotal);
+            $("input#Congregation").change(calcTotal);
+            $("input#Misc1").change(calcTotal);
+            $("input#Misc2").change(calcTotal);
+        });
+    </script>
+}

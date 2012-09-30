@@ -1,0 +1,39 @@
+﻿/** Index Page **/
+
+div#body
+{
+    width: 500px;
+}
+
+.editor-label 
+{
+    float: left;   
+}
+
+.editor-field 
+{
+    float: right;   
+    width: 200px;
+}
+
+ .field-container
+ {
+     width: 450px;
+     clear: both;
+ }
+ 
+ input#WorldWideWork,
+ input#KingdomHallFund,
+ input#Congregation,
+ input#Misc1,
+ input#Misc2,
+ div#Total
+ {
+    text-align: right;  
+ }
+ 
+ div#Total
+ { 
+    font-size: larger;
+    text-decoration: underline;
+ }
