@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyCollecter", "MoneyCollecter\MoneyCollecter.csproj", "{3619435C-E710-4E1E-8CF0-09F66C5FDC7B}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{D34B4420-F58E-4048-B16A-410F230838DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Test", "Data.Test\Data.Test.csproj", "{7E596AAF-C7DA-4DEE-94C7-D4ED87512333}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3619435C-E710-4E1E-8CF0-09F66C5FDC7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3619435C-E710-4E1E-8CF0-09F66C5FDC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3619435C-E710-4E1E-8CF0-09F66C5FDC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3619435C-E710-4E1E-8CF0-09F66C5FDC7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34B4420-F58E-4048-B16A-410F230838DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34B4420-F58E-4048-B16A-410F230838DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34B4420-F58E-4048-B16A-410F230838DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34B4420-F58E-4048-B16A-410F230838DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E596AAF-C7DA-4DEE-94C7-D4ED87512333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E596AAF-C7DA-4DEE-94C7-D4ED87512333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E596AAF-C7DA-4DEE-94C7-D4ED87512333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E596AAF-C7DA-4DEE-94C7-D4ED87512333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
