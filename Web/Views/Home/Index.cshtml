@@ -1,45 +1,151 @@
-﻿<div id="body">
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>Welcome to ASP.NET Web API!</h1>
-                <h2>Modify the code in this template to jump-start your ASP.NET Web API development.</h2>
-            </hgroup>
-            <p>
-                ASP.NET Web API allows you to expose your applications, data and services to the
-                web directly over HTTP.
-            </p>
-            <p>
-                To learn more about ASP.NET Web API visit the
-                <a href="http://go.microsoft.com/fwlink/?LinkID=238195" title="ASP.NET Web API Website">ASP.NET Web API Website</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET Web API.
-                If you have any questions about ASP.NET Web API, visit
-                <a href="http://go.microsoft.com/fwlink/?LinkID=238196" title="ASP.NET Web API Forum">our forums</a>.
-            </p>
-        </div>
-    </section>
-    <section class="content-wrapper main-content clear-fix">
-        <h3>We suggest the following steps:</h3>
-        <ol class="round">
-            <li class="one">
-                <h5>Getting Started</h5>
-                ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-                a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-                is an ideal platform for building RESTful applications on the .NET Framework.
-                <a href="http://go.microsoft.com/fwlink/?LinkId=245160">Learn more…</a>
-            </li>
+﻿<div data-role="page">
+    <div data-role="header">
+        <h1>Money Collector</h1>
+        <a href="/">New Reciept</a>
+        <a href="/History">History</a>
+    </div>
 
-            <li class="two">
-                <h5>Add NuGet packages and jump-start your coding</h5>
-                NuGet makes it easy to install and update free libraries and tools.
-                <a href="http://go.microsoft.com/fwlink/?LinkId=245161">Learn more…</a>
-            </li>
-            <li class="three">
-                <h5>Find Web Hosting</h5>
-                You can easily find a web hosting company that offers the right mix of features
-                and price for your applications.
-                <a href="http://go.microsoft.com/fwlink/?LinkId=245164">Learn more…</a>
-            </li>
-        </ol>
-    </section>
+    <div data-role="content">
+
+        <h2>New Reciept</h2>
+
+        <form action="/Home/Create" method="post">
+            <fieldset>
+                <legend>Reciept</legend>
+
+                <div class="field-container">
+                    <div class="editor-label">
+                        <label for="Date">Date</label>
+                    </div>
+                    <div class="editor-field">
+                        <input class="text-box single-line" data-val="true" data-val-date="The field Date must be a date." data-val-required="The Date field is required." id="Date" name="Date" type="date" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field-container">
+                    <div class="editor-label">
+                        <label for="WorldWideWork">WorldWideWork</label>
+                    </div>
+                    <div class="editor-field">
+                        <input class="text-box single-line" data-val="true" data-val-number="The field WorldWideWork must be a number." id="WorldWideWork" name="WorldWideWork" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="WorldWideWork" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field-container">
+                    <div class="editor-label">
+                        <label for="KingdomHallFund">KingdomHallFund</label>
+                    </div>
+                    <div class="editor-field">
+                        <input class="text-box single-line" data-val="true" data-val-number="The field KingdomHallFund must be a number." id="KingdomHallFund" name="KingdomHallFund" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="KingdomHallFund" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field-container">
+                    <div class="editor-label">
+                        <label for="Congregation">Congregation</label>
+                    </div>
+                    <div class="editor-field">
+                        <input class="text-box single-line" data-val="true" data-val-number="The field Congregation must be a number." id="Congregation" name="Congregation" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Congregation" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field-container">
+                    <div class="editor-label">
+                        <input class="text-box single-line" id="Misc1Name" name="Misc1Name" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Misc1Name" data-valmsg-replace="true"></span>
+
+                    </div>
+                    <div class="editor-field">
+                        <input class="text-box single-line" data-val="true" data-val-number="The field Misc1 must be a number." id="Misc1" name="Misc1" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Misc1" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field-container">
+                    <div class="editor-label">
+                        <input class="text-box single-line" id="Misc2Name" name="Misc2Name" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Misc2Name" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="editor-field">
+                        <input class="text-box single-line" data-val="true" data-val-number="The field Misc2 must be a number." id="Misc2" name="Misc2" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Misc2" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field-container">
+                    <div class="editor-label">
+                        Total:
+                    </div>
+                    <div class="editor-field">
+                        <div id="Total"></div>
+                    </div>
+                </div>
+
+                <div class="field-container">
+                    <input id="create" type="submit" value="Create" />
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
 </div>
+
+@section scripts {
+    <script type="text/javascript">
+
+        //OnLoad
+        $(function () {
+
+            //Wire up onchange event for input fields
+            $("input#WorldWideWork").change(calcTotal);
+            $("input#KingdomHallFund").change(calcTotal);
+            $("input#Congregation").change(calcTotal);
+            $("input#Misc1").change(calcTotal);
+            $("input#Misc2").change(calcTotal);
+
+            //Form is ajaxy, dont allow it to go anywhere
+            $("form").submit(function () {
+                return false;
+            });
+
+            //Our createReciept show fire when we click the submit button
+            $("#create").click(createReciept);
+        });
+        
+        //Calc the totals of all contributions, and display in totals line
+        function calcTotal() {
+            var total = 0;
+            total += Number($("input#WorldWideWork").val());
+            total += Number($("input#KingdomHallFund").val());
+            total += Number($("input#Congregation").val());
+            total += Number($("input#Misc1").val());
+            total += Number($("input#Misc2").val());
+
+            $("div#Total").text("$" + Number(total).toFixed(2));
+        }
+
+        //OnCreate - upload the reciept data to the server when we click he create button
+        function createReciept() {
+            //Create a message to send to the server
+            var data = {
+                "WorldWideWork": $("input#WorldWideWork").val(),
+                "KingdomHallFund": $("input#KingdomHallFund").val(),
+                "Congregation" : $("input#Congregation").val(),
+                "Miscellaneous1Name": $("input#Misc1Name").val(),
+                "Miscellaneous1": $("input#Misc1").val(),
+                "Miscellaneous2Name": $("input#Misc2Name").val(),
+                "Miscellaneous2": $("input#Misc2").val()
+            }
+
+            //Send it up
+            $.post("/api/Reciept", data, function (response, statusCode) {
+                alert(response);
+            });
+        }
+    </script>
+}
