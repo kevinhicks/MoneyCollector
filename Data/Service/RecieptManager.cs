@@ -57,7 +57,7 @@ namespace Data.Service
         /// <returns></returns>
         public List<Reciept> GetAllReciepts()
         {
-            return database.Reciepts.ToList();
+            return database.Reciepts.OrderByDescending(col => col.Date).ToList();
         }
 
         /// <summary>

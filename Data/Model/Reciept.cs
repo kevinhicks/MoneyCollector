@@ -11,7 +11,11 @@ namespace Data.Model
     {
         [Key]
         public Guid ID { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
+        
         public float WorldWideWork { get; set; }
         public float Congregation { get; set; }
         public float KingdomHallFund { get; set; }

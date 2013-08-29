@@ -30,8 +30,17 @@ namespace Web.Controllers
         [POST("Reciept")]
         public HttpResponseMessage AddReciept(Reciept reciept)
         {
-            var response = Request.CreateResponse<Reciept>(HttpStatusCode.Created, reciept);            
-            return response;
+            try
+            {
+                var reciepts = new RecieptManager();
+                reciepts.AddReciept(reciept);
+            }
+            catch (Exception exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, exception.Message);
+            }
+
+            return Request.CreateResponse<Reciept>(HttpStatusCode.Created, reciept);            
         }
 
         [PUT("Reciept/{id:guid}")]

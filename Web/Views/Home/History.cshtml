@@ -1,0 +1,56 @@
+﻿@model Web.ViewModels.HistoryViewModel
+
+@{
+    ViewBag.Title = "History";
+}
+
+
+<h2>Reciepts</h2>
+<table class="table table-striped table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Congregation</th>
+            <th>Kingdom Hall Fund</th>
+            <th>World Wide Work</th>
+            <th>Misc1</th>
+            <th>Misc2</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reciept in Model.Reciepts)
+        {
+            <tr>
+                <td>@reciept.Date</td>
+                <td>@reciept.Congregation</td>
+                <td>@reciept.KingdomHallFund</td>
+                <td>@reciept.WorldWideWork</td>
+                <td>@reciept.Miscellaneous1</td>
+                <td>@reciept.Miscellaneous2</td>
+                <td>Edit | Delete</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    <script type="text/javascript">
+
+        //OnLoad
+        $(function () {
+
+        });
+
+
+        //OnCreate - upload the reciept data to the server when we click he create button
+        function createReciept() {
+
+            //Send it up
+            $.post("/api/Reciept", data, function (response, statusCode) {
+                //alert(response);
+                window.location = "@Url.Action("History", "Home")";
+            });
+        }
+    </script>
+}
